@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Your Location</title>
+    <link rel="stylesheet" href="location.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([51.505, -0.09], 13); // Set initial coordinates and zoom level
+
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add a marker
+        L.marker([51.5, -0.09]).addTo(map)
+            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+            .openPopup();
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>My OpenStreetMap</h1>
+
+        <button id="set-location-btn">Set Location</button>
+        <div id="map"></div>
+
+        <div id="location-details" class="location-details"></div>
+        <button id="confirm-location-btn">Confirm Location</button>
+    </div>
+    <script src="location.js"></script>
+</body>
+</html>

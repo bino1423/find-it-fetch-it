@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.heading {
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+
+.profile {
+    font-style: italic;
+}
+
+.profile-picture {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}

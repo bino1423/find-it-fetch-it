@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="agent.css"> <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CDN -->
+    <title>Delivery Person Details</title>
+    <style>
+        .header {
+    /* background: rgb(238,174,202);
+    background: linear-gradient(0deg, rgba(238,174,202,1) 0%, rgba(171,184,225,1) 74%, rgba(148,187,233,1) 100%); */
+    padding: 1rem;
+    box-shadow: 0 0px 7px 2px rgba(0, 0, 0, 0.5);
+    
+}
+    nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.butt{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+nav ul li {
+    margin-left: 1rem;
+}
+        /* Custom style to hide the default file input and style the icon */
+        #profile-photo {
+            display: none;
+        }
+        .icon-button {
+            font-size: 40px;
+            background-color: transparent;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: poi   nter;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .icon-button img {
+            max-width: 50px; /* Adjust size of the image */
+            height: auto;
+        }
+        .icon-button:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body style="background-image: url('https://wallup.net/wp-content/uploads/2015/12/40105-gradient-simple_background-colorful-abstract.jpg'); background-size: cover; background-position: center;">
+    <header>        
+        <div class="container">
+            
+            <img src="img/gallery-img-02.jpg" alt="kick" class="butt">
+
+
+
+            <h1>Agent Report</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <body>
+          
+    </header>
+    <div class="container">
+        <h1 class="heading">Delivery Person Details</h1>
+        <div class="profile">
+            <!-- Profile Picture Icon with Custom Image -->
+            <label for="profile-photo">
+                <button class="icon-button">
+                    <img src="image/img-11.png" alt="Profile Picture Icon"> <!-- Custom Image for Profile Picture -->
+                </button>
+            </label>
+            <input type="file" id="profile-photo" class="form-control" accept="image/*" onchange="previewImage(event)">
+            <br>
+            <img id="profile-picture-preview" src="" alt="Profile Picture Preview" class="profile-picture" style="display:none; max-width: 200px;">
+
+            <p class="name"><strong>Name:</strong> <input type="text" class="form-control" placeholder="Full Name"></p>
+            <p class="rating"><strong>Rating:</strong> <input class="form-control"  type="text" placeholder="Rating"></p>
+            <p class="delivery-id"><strong>Delivery Person ID:</strong> <input class="form-control"  type="text" placeholder="ID"></p>
+
+            <h2>Vehicle Information</h2>
+            <p><strong>Type:</strong> <input class="form-control"  type="text" placeholder="Vehicle type"></p>
+            <p><strong>License Plate:</strong> <input class="form-control"  type="text" placeholder="License Plate"></p>
+            <p><strong>Color and Model:</strong> <input class="form-control"  type="text" placeholder="Color and Model"></p>
+
+            <h2>Estimated Time of Arrival (ETA)</h2>
+            <p><strong>ETA:</strong> <input class="form-control"  type="text" placeholder="ETA"></p>
+
+            <h2>Contact Information</h2>
+            <p><strong>Contact:</strong> <input class="form-control"  type="text" placeholder="Contact Info"></p>
+
+            <h2>Delivery History</h2>
+            <p><strong>Delivery History:</strong> <input class="form-control"  type="text" placeholder="Delivery History"></p>
+
+            <h2>Location Tracking</h2>
+            <p><strong>Location Tracking:</strong> <input class="form-control"  type="text" placeholder="Tracking Info"></p>
+
+            <h2>Delivery Status</h2>
+            <p><strong>Delivery Status:</strong> <input class="form-control"  type="text" placeholder="Delivery Status"></p>
+
+            <h2>Safety Features</h2>
+            <p><strong>Safety Features:</strong> <input class="form-control"  type="text" placeholder="Safety Features"></p>
+
+            <h2>Feedback Option</h2>
+            <button>Provide Feedback</button>
+            <p><strong>Feedback:</strong> <input class="form-control"  type="text" placeholder="Feedback"></p>
+        </div>
+    </div>
+
+    <script>
+        // Function to preview the profile picture after file selection
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.getElementById('profile-picture-preview');
+                output.src = reader.result;
+                output.style.display = 'block'; // Show the image preview
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>
